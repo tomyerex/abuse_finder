@@ -12,7 +12,8 @@ def _get_registrant_abuse(domain, parsed_whois):
     if 'contacts' in parsed_whois:
         if 'registrant' in parsed_whois['contacts'] and parsed_whois['contacts']['registrant']:
             if 'organization' in parsed_whois['contacts']['registrant'] and parsed_whois['contacts']['registrant']['organization']:
-                names.append(parsed_whois['contacts']['registrant']['organization'])
+                names.append(parsed_whois['contacts']
+                             ['registrant']['organization'])
             elif 'name' in parsed_whois['contacts']['registrant'] and parsed_whois['contacts']['registrant']['name']:
                 names.append(parsed_whois['contacts']['registrant']['name'])
 

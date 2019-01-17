@@ -16,7 +16,8 @@ def _get_abuse_emails(raw_whois):
             abuse_references = line.count('abuse')
 
             if abuse_references == score:
-                email_candidates = set(list(email_candidates) + email_addresses)
+                email_candidates = set(
+                    list(email_candidates) + email_addresses)
             elif abuse_references > score:
                 email_candidates = set(email_addresses)
                 score = abuse_references
@@ -32,7 +33,8 @@ def _get_names(ip_address, parsed_whois):
         for cidr in network['cidr'].split(','):
             cidr = IPv4Network(cidr.strip())
             if ip_address in cidr and network['description']:
-                names.append([cidr.prefixlen, network['description'].splitlines()[0]])
+                names.append(
+                    [cidr.prefixlen, network['description'].splitlines()[0]])
                 break
 
     return [n[1] for n in sorted(names, key=itemgetter(0), reverse=True)]
