@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 from ipwhois import IPWhois
 from operator import itemgetter

@@ -1,4 +1,4 @@
-from __future__ import unicode_literals
+
 
 from dns.resolver import query, NoAnswer
 from tldextract import extract
